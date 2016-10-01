@@ -11800,7 +11800,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries</span>
@@ -11852,7 +11852,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Calculate number of students</span>
@@ -11868,8 +11868,8 @@ div#notebook {
 <span class="n">n_failed</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">student_data</span><span class="p">[</span><span class="s1">&#39;passed&#39;</span><span class="p">][</span><span class="n">student_data</span><span class="p">[</span><span class="s1">&#39;passed&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;no&#39;</span><span class="p">])</span>
 
 <span class="c1"># TODO: Calculate graduation rate</span>
-<span class="n">n_total</span> <span class="o">=</span> <span class="n">n_passed</span> <span class="o">+</span> <span class="n">n_failed</span>
-<span class="n">grad_rate</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">n_passed</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n_total</span><span class="p">)</span>
+<span class="n">n_students</span> <span class="o">=</span> <span class="n">n_passed</span> <span class="o">+</span> <span class="n">n_failed</span>
+<span class="n">grad_rate</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">n_passed</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_students</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
 
 <span class="c1"># Print the results</span>
 <span class="k">print</span> <span class="s2">&quot;Total number of students: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_students</span><span class="p">)</span>
@@ -11893,7 +11893,7 @@ div#notebook {
 Number of features: 30
 Number of students who passed: 265
 Number of students who failed: 130
-Graduation rate of the class: 0.67%
+Graduation rate of the class: 67.09%
 </pre>
 </div>
 </div>
@@ -11916,7 +11916,7 @@ Graduation rate of the class: 0.67%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Extract feature columns</span>
@@ -11998,7 +11998,7 @@ Feature values:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">preprocess_features</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
@@ -12069,7 +12069,7 @@ Feature values:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import any additional functionality you may need here</span>
@@ -12083,6 +12083,7 @@ Feature values:
 
 <span class="c1"># TODO: Shuffle and split the dataset into the number of training and testing points above</span>
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X_all</span><span class="p">,</span> <span class="n">y_all</span><span class="p">,</span> 
+                                                    <span class="n">stratify</span> <span class="o">=</span> <span class="n">y_all</span><span class="p">,</span>
                                                     <span class="n">train_size</span> <span class="o">=</span> <span class="n">num_train</span><span class="p">,</span> 
                                                     <span class="n">test_size</span> <span class="o">=</span> <span class="n">num_test</span><span class="p">,</span> 
                                                     <span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
@@ -12217,7 +12218,7 @@ Testing set has 95 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">train_classifier</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">):</span>
@@ -12290,7 +12291,7 @@ Testing set has 95 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[83]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import the three supervised learning models from sklearn</span>
@@ -12299,7 +12300,7 @@ Testing set has 95 samples.
 <span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
 
 <span class="c1"># TODO: Initialize the three models</span>
-<span class="n">clf_A</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">()</span>
+<span class="n">clf_A</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">random_state</span> <span class="o">=</span> <span class="mi">42</span><span class="p">)</span>
 <span class="n">clf_B</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
 <span class="n">clf_C</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
 
@@ -12334,6 +12335,85 @@ Testing set has 95 samples.
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>--- Support Vector Machines ---
+Training a SVC using a training set size of 100. . .
+Trained model in 0.0019 seconds
+Made predictions in 0.0008 seconds.
+F1 score for training set: 0.8919.
+Made predictions in 0.0008 seconds.
+F1 score for test set: 0.7737.
+
+Training a SVC using a training set size of 200. . .
+Trained model in 0.0036 seconds
+Made predictions in 0.0025 seconds.
+F1 score for training set: 0.8795.
+Made predictions in 0.0016 seconds.
+F1 score for test set: 0.8182.
+
+Training a SVC using a training set size of 300. . .
+Trained model in 0.0077 seconds
+Made predictions in 0.0057 seconds.
+F1 score for training set: 0.8664.
+Made predictions in 0.0025 seconds.
+F1 score for test set: 0.8289.
+
+--- Gaussian Naive Bayes ---
+Training a GaussianNB using a training set size of 100. . .
+Trained model in 0.0011 seconds
+Made predictions in 0.0004 seconds.
+F1 score for training set: 0.5833.
+Made predictions in 0.0006 seconds.
+F1 score for test set: 0.5161.
+
+Training a GaussianNB using a training set size of 200. . .
+Trained model in 0.0008 seconds
+Made predictions in 0.0003 seconds.
+F1 score for training set: 0.8118.
+Made predictions in 0.0003 seconds.
+F1 score for test set: 0.7576.
+
+Training a GaussianNB using a training set size of 300. . .
+Trained model in 0.0008 seconds
+Made predictions in 0.0004 seconds.
+F1 score for training set: 0.8000.
+Made predictions in 0.0003 seconds.
+F1 score for test set: 0.7273.
+
+--- Random Florest ---
+Training a RandomForestClassifier using a training set size of 100. . .
+Trained model in 0.0183 seconds
+Made predictions in 0.0010 seconds.
+F1 score for training set: 0.9846.
+Made predictions in 0.0009 seconds.
+F1 score for test set: 0.7879.
+
+Training a RandomForestClassifier using a training set size of 200. . .
+Trained model in 0.0164 seconds
+Made predictions in 0.0010 seconds.
+F1 score for training set: 0.9963.
+Made predictions in 0.0009 seconds.
+F1 score for test set: 0.6870.
+
+Training a RandomForestClassifier using a training set size of 300. . .
+Trained model in 0.0449 seconds
+Made predictions in 0.0012 seconds.
+F1 score for training set: 0.9950.
+Made predictions in 0.0010 seconds.
+F1 score for test set: 0.7407.
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -12363,24 +12443,24 @@ Testing set has 95 samples.
 <tbody>
 <tr>
 <td style="text-align:center">100</td>
-<td style="text-align:center">0.0572</td>
+<td style="text-align:center">0.0019</td>
 <td style="text-align:center">0.0008</td>
-<td style="text-align:center">0.8591</td>
-<td style="text-align:center">0.7838</td>
+<td style="text-align:center">0.8919</td>
+<td style="text-align:center">0.7737</td>
 </tr>
 <tr>
 <td style="text-align:center">200</td>
-<td style="text-align:center">0.0065</td>
-<td style="text-align:center">0.0012</td>
-<td style="text-align:center">0.8693</td>
-<td style="text-align:center">0.7755</td>
+<td style="text-align:center">0.0036</td>
+<td style="text-align:center">0.0016</td>
+<td style="text-align:center">0.8795</td>
+<td style="text-align:center">0.8182</td>
 </tr>
 <tr>
 <td style="text-align:center">300</td>
-<td style="text-align:center">0.0110</td>
-<td style="text-align:center">0.0019</td>
-<td style="text-align:center">0.8692</td>
-<td style="text-align:center">0.7586</td>
+<td style="text-align:center">0.0077</td>
+<td style="text-align:center">0.0025</td>
+<td style="text-align:center">0.8664</td>
+<td style="text-align:center">0.8289</td>
 </tr>
 </tbody>
 </table>
@@ -12397,24 +12477,24 @@ Testing set has 95 samples.
 <tbody>
 <tr>
 <td style="text-align:center">100</td>
-<td style="text-align:center">0.0064</td>
-<td style="text-align:center">0.0003</td>
-<td style="text-align:center">0.8550</td>
-<td style="text-align:center">0.7481</td>
+<td style="text-align:center">0.0011</td>
+<td style="text-align:center">0.0006</td>
+<td style="text-align:center">0.5833</td>
+<td style="text-align:center">0.5161</td>
 </tr>
 <tr>
 <td style="text-align:center">200</td>
-<td style="text-align:center">0.0037</td>
+<td style="text-align:center">0.0008</td>
 <td style="text-align:center">0.0003</td>
-<td style="text-align:center">0.8321</td>
-<td style="text-align:center">0.7132</td>
+<td style="text-align:center">0.8118</td>
+<td style="text-align:center">0.7576</td>
 </tr>
 <tr>
 <td style="text-align:center">300</td>
 <td style="text-align:center">0.0008</td>
 <td style="text-align:center">0.0003</td>
-<td style="text-align:center">0.8088</td>
-<td style="text-align:center">0.7500</td>
+<td style="text-align:center">0.8000</td>
+<td style="text-align:center">0.7273</td>
 </tr>
 </tbody>
 </table>
@@ -12431,24 +12511,24 @@ Testing set has 95 samples.
 <tbody>
 <tr>
 <td style="text-align:center">100</td>
-<td style="text-align:center">0.0054</td>
-<td style="text-align:center">0.0018</td>
-<td style="text-align:center">0.7972</td>
-<td style="text-align:center">0.7068</td>
+<td style="text-align:center">0.0183</td>
+<td style="text-align:center">0.0009</td>
+<td style="text-align:center">0.9846</td>
+<td style="text-align:center">0.7879</td>
 </tr>
 <tr>
 <td style="text-align:center">200</td>
+<td style="text-align:center">0.0164</td>
 <td style="text-align:center">0.0009</td>
-<td style="text-align:center">0.0016</td>
-<td style="text-align:center">0.8571</td>
-<td style="text-align:center">0.7121</td>
+<td style="text-align:center">0.9963</td>
+<td style="text-align:center">0.6870</td>
 </tr>
 <tr>
 <td style="text-align:center">300</td>
-<td style="text-align:center">0.0006</td>
-<td style="text-align:center">0.0025</td>
-<td style="text-align:center">0.8722</td>
-<td style="text-align:center">0.7482</td>
+<td style="text-align:center">0.0449</td>
+<td style="text-align:center">0.0010</td>
+<td style="text-align:center">0.9950</td>
+<td style="text-align:center">0.7407</td>
 </tr>
 </tbody>
 </table>
@@ -12502,9 +12582,12 @@ Testing set has 95 samples.
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>Basically, to solve the problem of predicting student success in the final exam, we need to perform two major tasks. The first task consists in <strong>training a model</strong> (Support Vector Machine was chosen for this) and assessing its accuracy (how well it does overall). The second task consists in <strong>predicting</strong> if a student will fail or pass in the final exam given his underlying features.</p>
-<p>When training the model, we have to divide the data in two parts: one part is used to develop/train the model (called training subset) and the other part to test its accuracy (called testing subset). The ultimate goal of Support Vector Machines is to find a boundary that best divides the students that passed the final exam and the ones that did not. This boundary does not need to be perfect, in fact, it is desirable not to be so. When a boundary fits perfectly the training subset, we believe too much in the data, and we aren't considering that could exist noise on the training data. Here, the goal is to be as generic as possible. For Support Vector Machine, this boundary is the one that maximizes the distance between these two student groups (who failed and who passed the exam). After the model is trained, we use the testing subset to measure its accuracy, in other words, we assess how well the model is capable of getting the right answers and generalizing to new data.</p>
-<p>Finally, once you have the best boundary returned by the model, we need to perform the predicting task. Classifying a new student becomes easy. Depending on the underlying student features, he will either be at one side of the boundary or at the other. Therefore, the output for that student will be a label predicting if the student will pass or fail the final exam.</p>
+<p>The ultimate goal of any classifier is to decide whether a new entry (student) will be part of one class or the other. Support Vector Machines is no different. When the algorithm is trained by the training set (data used to build the model), a suitable boundary is designed, so that the model can separate the data points in two groups. So, depending where the new data point is placed, it will receive different classifications.</p>
+<p>To fully understand SVM, it is necessary to understand how its boundary is built. Assuming the data are linearly separable (there is a line dividing the groups), the goal is to find a "line" that separates the two classes of the problem (see picture below). In a higher dimensional space, we refer to a hyperplane instead (for three dimensions, we have a plane). So, in this process of finding this "line" or boundary, there are multiple candidates that accomplish the task of dividing the data in two. However, there are better boundaries than others. For example, a boundary that is too close to one group might classify some new data as being of the second group, when, in fact, the data points are closer to the first group. To solve this classification problem, SVM chooses the line that maximizes the distance between those two groups, in other words, the line that maximizes the "margins" of the groups. Doing so, the algorithm takes into account that noise might had occurred in the data, and that it guarantees a factor of safety for the new data. In addition, not all the data points help shape this line, only the closest to the boundary have the power to shape it. The ones that have this power are called Support Vectors. As you can see in the picture below, the Support Vectors are placed next to the boundary.</p>
+<p><img src="https://udacity-github-sync-content.s3.amazonaws.com/_imgs/372/1475191412/SVM_2.png" alt="alt text" title="Linearly separable data set"></p>
+<p>The technique explained above works well in many situations, however, some boundaries are not "linear" (or hyperplane). In the right picture below, we can see that there is a boundary dividing the data in two groups, but it has a shape of a circle. One approach to deal with this situation is to project the same data points in a higher dimensional space (by adding one dimension, for instance). Simply put, the data would continue to be the same, but it would be organized differently, as you can see in the left picture below. The two pictures share the same information, however, the left one can be separated by a plane (notice that we moved from two dimensions to three dimensions).</p>
+<p><img src="https://udacity-github-sync-content.s3.amazonaws.com/_imgs/372/1475191418/data_2d_to_3d_hyperplane.png" alt="alt text" title="Kernel trick"></p>
+<p>There is a simple way for performing this transformation, and it is called the kernel trick. It offers the same result as the previous approach, but in a more direct way. It consists of changing how the model measures similarity between two data points, which means how two data points are similar to/different from each other. So, depending on how we define two similar data points (that's the rough definition of a kernel function), the model will change its boundary. And, to make life easier, there are some ready-to-use kernel functions available, as linear, polynomial, etc., that we can take advantage of.</p>
 
 </div>
 </div>
@@ -12535,28 +12618,31 @@ Testing set has 95 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import &#39;GridSearchCV&#39; and &#39;make_scorer&#39;</span>
+<span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">StratifiedShuffleSplit</span>
 <span class="kn">from</span> <span class="nn">sklearn.grid_search</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">make_scorer</span>
 
 <span class="c1"># TODO: Create the parameters list you wish to tune</span>
 <span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;kernel&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="s1">&#39;rbf&#39;</span><span class="p">,</span> <span class="p">),</span>
-    <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">),</span> 
-    <span class="s1">&#39;gamma&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">,</span> <span class="p">),</span>
+    <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">),</span> 
+    <span class="s1">&#39;gamma&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.0001</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
 <span class="p">}</span>
 
 <span class="c1"># TODO: Initialize the classifier</span>
-<span class="n">clf</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">()</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">random_state</span> <span class="o">=</span> <span class="mi">42</span><span class="p">)</span>
 
 <span class="c1"># TODO: Make an f1 scoring function using &#39;make_scorer&#39; </span>
 <span class="n">f1_scorer</span> <span class="o">=</span> <span class="n">make_scorer</span><span class="p">(</span><span class="n">f1_score</span><span class="p">,</span> <span class="n">pos_label</span> <span class="o">=</span> <span class="s1">&#39;yes&#39;</span><span class="p">)</span>
 
+<span class="c1"># Build a stratified shuffle object</span>
+<span class="n">ssscv</span> <span class="o">=</span> <span class="n">StratifiedShuffleSplit</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">n_iter</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">)</span>
+
 <span class="c1"># TODO: Perform grid search on the classifier using the f1_scorer as the scoring method</span>
-<span class="n">grid_obj</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">parameters</span><span class="p">,</span> <span class="n">scoring</span> <span class="o">=</span> <span class="n">f1_scorer</span><span class="p">)</span>
+<span class="n">grid_obj</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">parameters</span><span class="p">,</span> <span class="n">cv</span> <span class="o">=</span> <span class="n">ssscv</span><span class="p">,</span> <span class="n">scoring</span> <span class="o">=</span> <span class="n">f1_scorer</span><span class="p">)</span>
 
 <span class="c1"># TODO: Fit the grid search object to the training data and find the optimal parameters</span>
 <span class="n">grid_obj</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
@@ -12580,11 +12666,11 @@ Testing set has 95 samples.
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#39;kernel&#39;: &#39;rbf&#39;, &#39;C&#39;: 10, &#39;gamma&#39;: 0.001}
-Made predictions in 0.0051 seconds.
-Tuned model has a training F1 score of 0.8434.
-Made predictions in 0.0016 seconds.
-Tuned model has a testing F1 score of 0.7862.
+<pre>{&#39;C&#39;: 1, &#39;gamma&#39;: 0.1}
+Made predictions in 0.0067 seconds.
+Tuned model has a training F1 score of 0.9805.
+Made predictions in 0.0022 seconds.
+Tuned model has a testing F1 score of 0.8153.
 </pre>
 </div>
 </div>
@@ -12608,7 +12694,7 @@ Tuned model has a testing F1 score of 0.7862.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong>The final model's F<sub>1</sub> score is 0.8434 for training and 0.7862 for testing. Compared to the untuned model (where the F<sub>1</sub> score is 0.7586), the final test score had a slightly improvement (less than 5%).</p>
+<p><strong>Answer: </strong>The final model's F<sub>1</sub> score is 0.9805 for training and 0.8153 for testing. Compared to the untuned model (where the F<sub>1</sub> score is 0.8289), the final test score is practically the same.</p>
 
 </div>
 </div>
